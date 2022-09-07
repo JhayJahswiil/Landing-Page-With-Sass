@@ -1,0 +1,21 @@
+// RESET
+@mixin reset {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+// BACKGROUND
+@mixin background{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+// DISPLAY
+@mixin display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

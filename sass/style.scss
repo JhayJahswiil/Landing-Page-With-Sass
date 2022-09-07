@@ -1,0 +1,124 @@
+// FILE IMPORTS
+@import 'mixins';
+@import 'variables';
+@import 'colors';
+@import 'media-queries';
+
+// RESET
+*{
+    @include reset;
+}
+
+// HEADER
+header{
+    width: $full-width;
+    height: $full-screen-height;
+    background: linear-gradient(#00000080, rgba(0, 0, 0, 0.548)) ,url(/img/building.jpg);
+    @include background;
+
+    // NAV
+
+    nav{
+    width: $full-width;
+    @include display;
+    justify-content: space-between;
+    padding: 20px 7%;
+    border-bottom: 1px solid $white-color;
+    // media-query
+    @include mobile{
+            flex-direction: column;
+            gap: 20px
+        }
+
+    // LOGO
+    .nav__logo{
+        @include display;
+
+        &--img img{
+            width: 30px;
+        }
+
+        &--name p{
+            font-size: 20px;
+            color: $white-color
+        }
+
+    }
+
+    // MENU
+    .nav__menu ul{
+        @include display;
+        gap: 20px;
+
+        & li{
+            list-style: none;
+
+            & a{
+                text-decoration: none;
+                color: $white-color;
+
+                &::after{
+                    content: '';
+                    width: 0;
+                    height: 2px;
+                    display: block;
+                    background-color: $crimson-color;
+                    transition: .2s;
+                }
+
+                &:hover::after{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+// END OF NAV
+
+// HERO SECTION
+    .hero__section{
+        margin-top: 7em;
+
+        &--content{
+            width: $full-width;
+            color: $white-color;
+            text-align: $center-alignment;
+        }
+        
+        &--content h1{
+            font-size: 50px;
+            max-width: 600px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        &--content p{
+            max-width: 500px;
+            margin: 10px auto;
+            font-size: 17px;
+            padding: 0 30px;
+        }
+
+        &--content button{
+            margin-top: 2em;
+            background-color: $crimson-color;
+            border: none;
+            padding: 10px 20px;
+            color: $white-color;
+            border-radius: 2px;
+
+            &:hover{
+                background-color: $light-crimson-color;
+            }
+        }
+
+        &--content .span-text{
+            margin-top: 1em;
+            font-size: 12px;
+        }
+    }
+
+    // END OF HERO SECTION
+}
+// END OF HEADER
+
